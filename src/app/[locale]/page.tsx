@@ -5,7 +5,7 @@ import { Link } from '@/i18n/navigation';
 import { products } from '@/data/products';
 import { categories } from '@/data/categories';
 import { ProductCard } from '@/components/products/product-card';
-import { Sparkles, Truck, HeadphonesIcon, ShoppingBag, Heart } from 'lucide-react';
+import { Sparkles, HeadphonesIcon, ShoppingBag, Heart } from 'lucide-react';
 
 export default function HomePage() {
   const t = useTranslations();
@@ -100,10 +100,9 @@ export default function HomePage() {
       {/* Trust badges */}
       <section className="max-w-7xl mx-auto px-4 py-20 lg:py-28">
         <h2 className="font-[var(--font-heading)] text-3xl font-bold text-center mb-14 italic">{t('trust.title')}</h2>
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
           {[
             { icon: Sparkles, title: t('trust.quality'), desc: t('trust.qualityDesc'), bg: 'bg-rose-light/30' },
-            { icon: Truck, title: t('trust.shipping'), desc: t('trust.shippingDesc'), bg: 'bg-lavender/40' },
             { icon: HeadphonesIcon, title: t('trust.support'), desc: t('trust.supportDesc'), bg: 'bg-peach/40' },
             { icon: ShoppingBag, title: t('trust.secure'), desc: t('trust.secureDesc'), bg: 'bg-mauve-light/30' },
           ].map((item) => (
