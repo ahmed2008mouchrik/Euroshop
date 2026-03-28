@@ -1,0 +1,588 @@
+[
+  {
+    "id": "high-waist-wide-leg-trousers",
+    "name": {
+      "en": "High-Waist Wide-Leg Trousers",
+      "fr": "Pantalon Large Taille Haute"
+    },
+    "description": {
+      "en": "Chic wide-leg trousers with a flattering high-rise waist. Made from a fluid crepe fabric that drapes beautifully with every step.",
+      "fr": "Pantalon large chic avec taille haute flatteuse. Confectionné dans un crêpe fluide qui tombe élégamment à chaque pas."
+    },
+    "price": 69,
+    "images": [
+      "/images/products/product-5.jpg"
+    ],
+    "category": "vetements",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Ivory",
+        "hex": "#FFFFF0"
+      },
+      {
+        "name": "Navy",
+        "hex": "#1B2A4A"
+      }
+    ],
+    "inStock": true,
+    "stockCount": 32,
+    "featured": false,
+    "bestSeller": false,
+    "tags": [
+      "trousers",
+      "wide-leg",
+      "high-waist",
+      "crepe"
+    ]
+  },
+  {
+    "id": "pleated-midi-skirt",
+    "name": {
+      "en": "Pleated Midi Skirt",
+      "fr": "Jupe Midi Plissée"
+    },
+    "description": {
+      "en": "A graceful pleated midi skirt in a lightweight satin finish. The accordion pleats create beautiful movement as you walk.",
+      "fr": "Une jupe midi plissée gracieuse en finition satin légère. Les plis accordéon créent un magnifique mouvement à la marche."
+    },
+    "price": 65,
+    "images": [
+      "/images/products/product-6.jpg"
+    ],
+    "category": "vetements",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      {
+        "name": "Champagne",
+        "hex": "#F7E7CE"
+      },
+      {
+        "name": "Forest Green",
+        "hex": "#228B22"
+      }
+    ],
+    "inStock": true,
+    "stockCount": 18,
+    "featured": false,
+    "bestSeller": false,
+    "tags": [
+      "skirt",
+      "pleated",
+      "midi",
+      "satin"
+    ]
+  },
+  {
+    "id": "scented-soy-candle",
+    "name": {
+      "en": "Scented Soy Candle",
+      "fr": "Bougie Parfumée au Soja"
+    },
+    "description": {
+      "en": "Hand-poured soy wax candle with a delicate blend of vanilla and sandalwood. Burns cleanly for up to 50 hours. Comes in an elegant glass jar.",
+      "fr": "Bougie en cire de soja coulée à la main avec un mélange délicat de vanille et bois de santal. Brûle proprement jusqu'à 50 heures. Livrée dans un élégant pot en verre."
+    },
+    "price": 28,
+    "images": [
+      "/images/products/product-7.jpg"
+    ],
+    "category": "decorations",
+    "sizes": [
+      "One Size"
+    ],
+    "colors": [
+      {
+        "name": "Ivory",
+        "hex": "#FFFFF0"
+      },
+      {
+        "name": "Blush Pink",
+        "hex": "#FFB6C1"
+      }
+    ],
+    "inStock": true,
+    "stockCount": 45,
+    "featured": true,
+    "bestSeller": true,
+    "tags": [
+      "candle",
+      "soy",
+      "scented",
+      "home"
+    ]
+  },
+  {
+    "id": "ceramic-vase-set",
+    "name": {
+      "en": "Ceramic Vase Set",
+      "fr": "Ensemble de Vases en Céramique"
+    },
+    "description": {
+      "en": "A set of three minimalist ceramic vases in varying heights. Perfect for dried flowers or as standalone decorative pieces. Matte finish with organic curves.",
+      "fr": "Un ensemble de trois vases en céramique minimalistes de hauteurs variées. Parfaits pour les fleurs séchées ou comme pièces décoratives. Finition mate aux courbes organiques."
+    },
+    "price": 55,
+    "originalPrice": 72,
+    "images": [
+      "/images/products/product-8.jpg"
+    ],
+    "category": "decorations",
+    "sizes": [
+      "One Size"
+    ],
+    "colors": [
+      {
+        "name": "White",
+        "hex": "#FFFFFF"
+      },
+      {
+        "name": "Terracotta",
+        "hex": "#E2725B"
+      },
+      {
+        "name": "Sage",
+        "hex": "#B2AC88"
+      }
+    ],
+    "inStock": true,
+    "stockCount": 20,
+    "featured": true,
+    "bestSeller": false,
+    "tags": [
+      "vase",
+      "ceramic",
+      "minimalist",
+      "home"
+    ]
+  },
+  {
+    "id": "woven-throw-blanket",
+    "name": {
+      "en": "Woven Throw Blanket",
+      "fr": "Plaid Tissé"
+    },
+    "description": {
+      "en": "A luxuriously soft woven throw blanket with delicate fringe detailing. Made from a cotton-blend for year-round comfort. Drapes beautifully over sofas and beds.",
+      "fr": "Un plaid tissé d'une douceur luxueuse avec des détails de franges délicates. Fabriqué en mélange de coton pour un confort toute l'année."
+    },
+    "price": 45,
+    "images": [
+      "/images/products/product-9.jpg"
+    ],
+    "category": "decorations",
+    "sizes": [
+      "One Size"
+    ],
+    "colors": [
+      {
+        "name": "Cream",
+        "hex": "#FFFDD0"
+      },
+      {
+        "name": "Dusty Rose",
+        "hex": "#DCAE96"
+      },
+      {
+        "name": "Grey",
+        "hex": "#808080"
+      }
+    ],
+    "inStock": true,
+    "stockCount": 30,
+    "featured": false,
+    "bestSeller": true,
+    "tags": [
+      "blanket",
+      "throw",
+      "woven",
+      "home"
+    ]
+  },
+  {
+    "id": "gold-frame-mirror",
+    "name": {
+      "en": "Gold Frame Mirror",
+      "fr": "Miroir Cadre Doré"
+    },
+    "description": {
+      "en": "An elegant round mirror with a brushed gold metal frame. Adds a touch of glamour to any room. Easy wall mounting included.",
+      "fr": "Un miroir rond élégant avec un cadre en métal doré brossé. Ajoute une touche de glamour à toute pièce. Fixation murale facile incluse."
+    },
+    "price": 89,
+    "originalPrice": 110,
+    "images": [
+      "/images/products/product-10.jpg"
+    ],
+    "category": "decorations",
+    "sizes": [
+      "One Size"
+    ],
+    "colors": [
+      {
+        "name": "Gold",
+        "hex": "#DAA520"
+      }
+    ],
+    "inStock": true,
+    "stockCount": 12,
+    "featured": false,
+    "bestSeller": false,
+    "tags": [
+      "mirror",
+      "gold",
+      "wall",
+      "home"
+    ]
+  },
+  {
+    "id": "decorative-cushion-set",
+    "name": {
+      "en": "Decorative Cushion Set",
+      "fr": "Ensemble de Coussins Décoratifs"
+    },
+    "description": {
+      "en": "A set of two velvet decorative cushions with a subtle sheen. Plush filling for ultimate comfort. Removable covers for easy care.",
+      "fr": "Un ensemble de deux coussins décoratifs en velours avec un éclat subtil. Rembourrage moelleux pour un confort ultime. Housses amovibles pour un entretien facile."
+    },
+    "price": 38,
+    "images": [
+      "/images/products/product-11.jpg"
+    ],
+    "category": "decorations",
+    "sizes": [
+      "One Size"
+    ],
+    "colors": [
+      {
+        "name": "Blush",
+        "hex": "#DE5D83"
+      },
+      {
+        "name": "Emerald",
+        "hex": "#50C878"
+      },
+      {
+        "name": "Navy",
+        "hex": "#1B2A4A"
+      }
+    ],
+    "inStock": true,
+    "stockCount": 25,
+    "featured": false,
+    "bestSeller": false,
+    "tags": [
+      "cushion",
+      "velvet",
+      "decorative",
+      "home"
+    ]
+  },
+  {
+    "id": "dried-flower-bouquet",
+    "name": {
+      "en": "Dried Flower Bouquet",
+      "fr": "Bouquet de Fleurs Séchées"
+    },
+    "description": {
+      "en": "A beautifully arranged bouquet of naturally dried flowers including pampas grass, eucalyptus, and cotton stems. Lasts for months without any maintenance.",
+      "fr": "Un magnifique bouquet de fleurs naturellement séchées comprenant herbe de la pampa, eucalyptus et tiges de coton. Dure des mois sans entretien."
+    },
+    "price": 35,
+    "originalPrice": 42,
+    "images": [
+      "/images/products/product-12.jpg"
+    ],
+    "category": "decorations",
+    "sizes": [
+      "One Size"
+    ],
+    "colors": [
+      {
+        "name": "Natural",
+        "hex": "#FAEBD7"
+      },
+      {
+        "name": "Blush Mix",
+        "hex": "#FFB6C1"
+      }
+    ],
+    "inStock": true,
+    "stockCount": 15,
+    "featured": false,
+    "bestSeller": true,
+    "tags": [
+      "flowers",
+      "dried",
+      "bouquet",
+      "home"
+    ]
+  },
+  {
+    "id": "rose-face-serum",
+    "name": {
+      "en": "Rose Face Serum",
+      "fr": "Sérum Visage à la Rose"
+    },
+    "description": {
+      "en": "A lightweight face serum infused with rosehip oil and hyaluronic acid. Deeply hydrates and brightens the skin. Suitable for all skin types.",
+      "fr": "Un sérum visage léger infusé à l'huile de rose musquée et à l'acide hyaluronique. Hydrate en profondeur et illumine la peau. Convient à tous les types de peau."
+    },
+    "price": 42,
+    "images": [
+      "/images/products/product-13.jpg"
+    ],
+    "category": "cosmetiques",
+    "sizes": [
+      "30ml",
+      "50ml"
+    ],
+    "colors": [
+      {
+        "name": "Rose Gold",
+        "hex": "#B76E79"
+      }
+    ],
+    "inStock": true,
+    "stockCount": 35,
+    "featured": true,
+    "bestSeller": true,
+    "tags": [
+      "serum",
+      "rose",
+      "skincare",
+      "hydrating"
+    ]
+  },
+  {
+    "id": "matte-lipstick-set",
+    "name": {
+      "en": "Matte Lipstick Set",
+      "fr": "Coffret Rouges à Lèvres Mat"
+    },
+    "description": {
+      "en": "A curated set of four long-lasting matte lipsticks in universally flattering shades. Creamy formula that doesn't dry out lips. Enriched with vitamin E.",
+      "fr": "Un coffret de quatre rouges à lèvres mats longue tenue dans des teintes universellement flatteuses. Formule crémeuse qui ne dessèche pas les lèvres. Enrichi en vitamine E."
+    },
+    "price": 36,
+    "originalPrice": 48,
+    "images": [
+      "/images/products/product-14.jpg"
+    ],
+    "category": "cosmetiques",
+    "sizes": [
+      "One Size"
+    ],
+    "colors": [
+      {
+        "name": "Nude Collection",
+        "hex": "#C4956A"
+      },
+      {
+        "name": "Berry Collection",
+        "hex": "#8B0A50"
+      }
+    ],
+    "inStock": true,
+    "stockCount": 28,
+    "featured": true,
+    "bestSeller": true,
+    "tags": [
+      "lipstick",
+      "matte",
+      "set",
+      "makeup"
+    ]
+  },
+  {
+    "id": "argan-hair-oil",
+    "name": {
+      "en": "Argan Hair Oil",
+      "fr": "Huile d'Argan pour Cheveux"
+    },
+    "description": {
+      "en": "Pure Moroccan argan oil for silky, nourished hair. Tames frizz, adds shine, and protects against heat damage. A few drops go a long way.",
+      "fr": "Huile d'argan marocaine pure pour des cheveux soyeux et nourris. Dompte les frisottis, apporte de la brillance et protège contre les dommages thermiques."
+    },
+    "price": 32,
+    "images": [
+      "/images/products/product-15.jpg"
+    ],
+    "category": "cosmetiques",
+    "sizes": [
+      "50ml",
+      "100ml"
+    ],
+    "colors": [
+      {
+        "name": "Amber",
+        "hex": "#FFBF00"
+      }
+    ],
+    "inStock": true,
+    "stockCount": 40,
+    "featured": false,
+    "bestSeller": false,
+    "tags": [
+      "hair",
+      "argan",
+      "oil",
+      "moroccan"
+    ]
+  },
+  {
+    "id": "shea-body-butter",
+    "name": {
+      "en": "Shea Body Butter",
+      "fr": "Beurre Corporel au Karité"
+    },
+    "description": {
+      "en": "Rich and nourishing body butter made with organic shea butter and coconut oil. Intensely moisturizes dry skin and leaves a subtle, natural scent.",
+      "fr": "Beurre corporel riche et nourrissant à base de beurre de karité biologique et d'huile de coco. Hydrate intensément les peaux sèches avec un parfum naturel subtil."
+    },
+    "price": 25,
+    "images": [
+      "/images/products/product-16.jpg"
+    ],
+    "category": "cosmetiques",
+    "sizes": [
+      "150ml",
+      "250ml"
+    ],
+    "colors": [
+      {
+        "name": "Natural",
+        "hex": "#FAEBD7"
+      }
+    ],
+    "inStock": true,
+    "stockCount": 50,
+    "featured": false,
+    "bestSeller": true,
+    "tags": [
+      "body",
+      "shea",
+      "butter",
+      "moisturizer"
+    ]
+  },
+  {
+    "id": "vitamin-c-face-cream",
+    "name": {
+      "en": "Vitamin C Face Cream",
+      "fr": "Crème Visage Vitamine C"
+    },
+    "description": {
+      "en": "A brightening face cream packed with vitamin C and antioxidants. Evens out skin tone and reduces the appearance of dark spots. SPF 15 protection included.",
+      "fr": "Une crème visage illuminatrice enrichie en vitamine C et antioxydants. Unifie le teint et réduit l'apparence des taches brunes. Protection SPF 15 incluse."
+    },
+    "price": 38,
+    "originalPrice": 49,
+    "images": [
+      "/images/products/product-17.jpg"
+    ],
+    "category": "cosmetiques",
+    "sizes": [
+      "50ml"
+    ],
+    "colors": [
+      {
+        "name": "White",
+        "hex": "#FFFFFF"
+      }
+    ],
+    "inStock": true,
+    "stockCount": 22,
+    "featured": false,
+    "bestSeller": false,
+    "tags": [
+      "cream",
+      "vitamin-c",
+      "brightening",
+      "skincare"
+    ]
+  },
+  {
+    "id": "perfume-floral-mist",
+    "name": {
+      "en": "Floral Body Mist",
+      "fr": "Brume Corporelle Florale"
+    },
+    "description": {
+      "en": "A delicate body mist with notes of peony, jasmine, and white musk. Light and refreshing, perfect for everyday wear. Long-lasting freshness.",
+      "fr": "Une brume corporelle délicate aux notes de pivoine, jasmin et musc blanc. Légère et rafraîchissante, parfaite au quotidien. Fraîcheur longue durée."
+    },
+    "price": 22,
+    "images": [
+      "/images/products/product-18.jpg"
+    ],
+    "category": "cosmetiques",
+    "sizes": [
+      "100ml",
+      "200ml"
+    ],
+    "colors": [
+      {
+        "name": "Pink",
+        "hex": "#FFB6C1"
+      }
+    ],
+    "inStock": true,
+    "stockCount": 38,
+    "featured": false,
+    "bestSeller": false,
+    "tags": [
+      "perfume",
+      "mist",
+      "floral",
+      "body"
+    ]
+  },
+  {
+    "id": "ahmed",
+    "name": {
+      "en": "Ahmed",
+      "fr": "Tadili"
+    },
+    "description": {
+      "en": "daadzdzd",
+      "fr": "efdefefef"
+    },
+    "price": 100,
+    "images": [],
+    "category": "decorations",
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
+    "colors": [
+      {
+        "name": "Black",
+        "hex": "#000000"
+      }
+    ],
+    "inStock": true,
+    "stockCount": 5,
+    "featured": false,
+    "bestSeller": false,
+    "tags": [
+      "magnifique"
+    ],
+    "originalPrice": 12
+  }
+]

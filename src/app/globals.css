@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #3D3250;
+  --color-navy-light: #524668;
+  --color-navy-dark: #2A2139;
+  --color-gold: #D4A574;
+  --color-gold-light: #E0BB94;
+  --color-gold-dark: #B8895A;
+  --color-cream: #FFF9F7;
+  --color-cream-dark: #F5ECE7;
+  --color-rose: #F2A7B0;
+  --color-rose-light: #FBDADF;
+  --color-rose-dark: #D4828B;
+  --color-blush: #FFF2F0;
+  --color-mauve: #C9A0DC;
+  --color-mauve-light: #E5D4F0;
+  --color-lavender: #F0E6F6;
+  --color-peach: #FDDCCC;
+  --color-soft-pink: #FFD6E0;
+  --color-rose-gold: #E8B4B8;
+  --color-soft-lilac: #E8D8F0;
+  --color-warm-blush: #FFF0ED;
+  --color-petal: #FADADD;
+  --color-cloud: #FFFBFC;
+
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-script: 'Dancing Script', cursive;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-cream);
+  color: var(--color-navy);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+::selection {
+  background-color: var(--color-rose-light);
+  color: var(--color-navy);
+}
+
+/* Soft scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-cream);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-rose-light);
+  border-radius: 999px;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .font-script {
+    font-family: var(--font-script);
+  }
+  .shadow-pink {
+    box-shadow: 0 4px 20px rgba(242, 167, 176, 0.15);
+  }
+  .shadow-pink-lg {
+    box-shadow: 0 8px 40px rgba(242, 167, 176, 0.2);
+  }
+  .text-shadow-soft {
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.15);
+  }
+}
