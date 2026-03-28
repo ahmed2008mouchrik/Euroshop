@@ -27,7 +27,7 @@ export default function OrderPage() {
         <div className="w-20 h-20 bg-lavender rounded-full flex items-center justify-center mx-auto mb-5">
           <Heart size={24} className="text-mauve" strokeWidth={1.5} />
         </div>
-        <p className="text-navy/40 text-lg font-light">{t('cart.empty')}</p>
+        <p className="text-navy/65 text-lg font-light">{t('cart.empty')}</p>
         <Link href="/products" className="text-rose font-medium mt-4 inline-block hover:underline underline-offset-4">
           {t('cart.continueShopping')}
         </Link>
@@ -42,13 +42,13 @@ export default function OrderPage() {
           <Sparkles size={28} className="text-rose" />
         </div>
         <h1 className="font-[var(--font-heading)] text-3xl font-bold italic">{t('orderSuccess.title')}</h1>
-        <p className="text-navy/35 mt-2 font-light">{t('orderSuccess.subtitle')}</p>
+        <p className="text-navy/60 mt-2 font-light">{t('orderSuccess.subtitle')}</p>
         <div className="bg-blush rounded-2xl p-5 mt-6 inline-block">
-          <p className="text-[11px] text-navy/35 uppercase tracking-widest font-medium">{t('orderSuccess.orderNumber')}</p>
+          <p className="text-[11px] text-navy/60 uppercase tracking-widest font-medium">{t('orderSuccess.orderNumber')}</p>
           <p className="font-mono font-bold text-lg mt-1">{orderResult.orderNumber}</p>
         </div>
-        <p className="text-navy/40 mt-6 max-w-md mx-auto text-sm leading-relaxed font-light">{t('orderSuccess.message')}</p>
-        <p className="text-navy/25 mt-2 text-xs">{t('orderSuccess.emailSent')}</p>
+        <p className="text-navy/65 mt-6 max-w-md mx-auto text-sm leading-relaxed font-light">{t('orderSuccess.message')}</p>
+        <p className="text-navy/50 mt-2 text-xs">{t('orderSuccess.emailSent')}</p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center mt-10">
           <a
             href={orderResult.whatsAppLink}
@@ -83,12 +83,12 @@ export default function OrderPage() {
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-8 lg:py-16">
-      <Link href="/products" className="inline-flex items-center gap-1.5 text-xs text-navy/35 hover:text-rose mb-8 transition-colors uppercase tracking-widest font-medium">
+      <Link href="/products" className="inline-flex items-center gap-1.5 text-xs text-navy/60 hover:text-rose mb-8 transition-colors uppercase tracking-widest font-medium">
         <ArrowLeft size={14} /> {t('nav.products')}
       </Link>
 
       <h1 className="font-[var(--font-heading)] text-3xl font-bold italic">{t('order.title')}</h1>
-      <p className="text-navy/35 mt-1 mb-10 font-light">{t('order.subtitle')}</p>
+      <p className="text-navy/60 mt-1 mb-10 font-light">{t('order.subtitle')}</p>
 
       <form onSubmit={handleSubmit}>
         <div className="grid lg:grid-cols-3 gap-12">
@@ -107,16 +107,16 @@ export default function OrderPage() {
               <FormInput label={t('order.address')} value={form.address} onChange={(v) => update('address', v)} required />
             </div>
             <div>
-              <label className="block text-[11px] font-semibold uppercase tracking-widest text-navy/35 mb-2">{t('order.notes')}</label>
+              <label className="block text-[11px] font-semibold uppercase tracking-widest text-navy/60 mb-2">{t('order.notes')}</label>
               <textarea
                 value={form.notes}
                 onChange={(e) => update('notes', e.target.value)}
                 placeholder={t('order.notesPlaceholder')}
                 rows={3}
-                className="w-full bg-blush/50 border border-rose-light/30 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-rose/30 resize-none placeholder:text-navy/20"
+                className="w-full bg-blush/50 border border-rose-light/30 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-rose/30 resize-none placeholder:text-navy/40"
               />
             </div>
-            <p className="text-[11px] text-navy/25 font-light">{t('order.termsNote')}</p>
+            <p className="text-[11px] text-navy/50 font-light">{t('order.termsNote')}</p>
           </div>
 
           {/* Order summary */}
@@ -129,7 +129,7 @@ export default function OrderPage() {
                     <div className="w-12 h-12 bg-lavender/30 rounded-xl flex-shrink-0" />
                     <div className="flex-1 min-w-0">
                       <p className="text-xs font-medium truncate">{item.product.name[locale]}</p>
-                      <p className="text-[10px] text-navy/30">{item.selectedSize} &middot; {item.selectedColor}</p>
+                      <p className="text-[10px] text-navy/55">{item.selectedSize} &middot; {item.selectedColor}</p>
                       <div className="flex items-center justify-between mt-1">
                         <div className="flex items-center gap-1">
                           <button type="button" onClick={() => updateQuantity(item.product.id, item.selectedSize, item.selectedColor, item.quantity - 1)} className="w-5 h-5 rounded-full bg-blush flex items-center justify-center hover:bg-rose-light/40">
@@ -149,7 +149,7 @@ export default function OrderPage() {
 
               <div className="border-t border-rose-light/20 mt-5 pt-4 space-y-2">
                 <div className="flex justify-between text-xs">
-                  <span className="text-navy/30">{t('cart.shipping')}</span>
+                  <span className="text-navy/55">{t('cart.shipping')}</span>
                   <span className="text-green-500 font-medium">{t('cart.free')}</span>
                 </div>
                 <div className="flex justify-between font-bold text-base pt-2 border-t border-rose-light/20">
@@ -178,7 +178,7 @@ function FormInput({ label, type = 'text', value, onChange, required }: {
 }) {
   return (
     <div>
-      <label className="block text-[11px] font-semibold uppercase tracking-widest text-navy/35 mb-2">
+      <label className="block text-[11px] font-semibold uppercase tracking-widest text-navy/60 mb-2">
         {label}{required && <span className="text-rose"> *</span>}
       </label>
       <input
@@ -186,7 +186,7 @@ function FormInput({ label, type = 'text', value, onChange, required }: {
         value={value}
         onChange={(e) => onChange(e.target.value)}
         required={required}
-        className="w-full bg-blush/50 border border-rose-light/30 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-rose/30 placeholder:text-navy/20"
+        className="w-full bg-blush/50 border border-rose-light/30 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-rose/30 placeholder:text-navy/40"
       />
     </div>
   );

@@ -21,13 +21,13 @@ export default function AboutPage() {
           <span className="font-script text-lg">Our Story</span>
         </div>
         <h1 className="font-[var(--font-heading)] text-4xl md:text-5xl font-bold italic">{t('title')}</h1>
-        <p className="text-navy/35 mt-3 text-lg font-light">{t('subtitle')}</p>
+        <p className="text-navy/60 mt-3 text-lg font-light">{t('subtitle')}</p>
       </div>
 
       {/* Story */}
       <section className="mb-16">
         <h2 className="font-[var(--font-heading)] text-2xl font-bold mb-4 italic">{t('storyTitle')}</h2>
-        <p className="text-navy/45 leading-relaxed font-light">{t('storyText')}</p>
+        <p className="text-navy/70 leading-relaxed font-light">{t('storyText')}</p>
       </section>
 
       {/* Mission */}
@@ -36,7 +36,7 @@ export default function AboutPage() {
         <div className="absolute bottom-0 left-0 w-32 h-32 bg-mauve/30 rounded-full blur-[60px]" />
         <div className="relative">
           <h2 className="font-[var(--font-heading)] text-2xl font-bold mb-4 italic">{t('missionTitle')}</h2>
-          <p className="text-navy/40 leading-relaxed font-light">{t('missionText')}</p>
+          <p className="text-navy/65 leading-relaxed font-light">{t('missionText')}</p>
         </div>
       </section>
 
@@ -50,7 +50,7 @@ export default function AboutPage() {
                 <v.icon size={22} className="text-rose/50" strokeWidth={1.5} />
               </div>
               <h3 className="font-semibold text-sm mb-2">{v.title}</h3>
-              <p className="text-xs text-navy/35 leading-relaxed font-light">{v.desc}</p>
+              <p className="text-xs text-navy/60 leading-relaxed font-light">{v.desc}</p>
             </div>
           ))}
         </div>
@@ -59,7 +59,7 @@ export default function AboutPage() {
       {/* CTA */}
       <section className="text-center bg-gradient-to-br from-soft-pink/40 to-lavender/30 rounded-[2rem] p-12">
         <h2 className="font-[var(--font-heading)] text-2xl font-bold mb-3 italic">{t('ctaTitle')}</h2>
-        <p className="text-navy/35 mb-8 font-light">{t('ctaText')}</p>
+        <p className="text-navy/60 mb-8 font-light">{t('ctaText')}</p>
         <Link href="/products" className="inline-block bg-gradient-to-r from-rose to-mauve text-white px-10 py-3.5 rounded-full font-semibold hover:opacity-90 transition-opacity shadow-xl shadow-rose/15">
           {t('ctaButton')}
         </Link>

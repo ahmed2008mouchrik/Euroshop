@@ -37,7 +37,7 @@ export function CartDrawer() {
               <h2 className="font-[var(--font-heading)] text-lg font-semibold flex items-center gap-2">
                 <Sparkles size={16} className="text-rose" /> {t('title')}
               </h2>
-              <button onClick={closeCart} className="p-1 text-navy/30 hover:text-rose transition-colors">
+              <button onClick={closeCart} className="p-1 text-navy/55 hover:text-rose transition-colors">
                 <X size={20} strokeWidth={1.5} />
               </button>
             </div>
@@ -48,7 +48,7 @@ export function CartDrawer() {
                   <ShoppingBag size={28} className="text-mauve" strokeWidth={1.5} />
                 </div>
                 <p className="font-medium text-navy/50">{t('empty')}</p>
-                <p className="text-sm text-navy/30 mt-1">{t('emptyDesc')}</p>
+                <p className="text-sm text-navy/55 mt-1">{t('emptyDesc')}</p>
                 <Link
                   href="/products"
                   onClick={closeCart}
@@ -67,7 +67,7 @@ export function CartDrawer() {
                       </div>
                       <div className="flex-1 min-w-0">
                         <p className="font-medium text-sm truncate">{item.product.name[locale]}</p>
-                        <p className="text-[11px] text-navy/35 mt-0.5">
+                        <p className="text-[11px] text-navy/60 mt-0.5">
                           {item.selectedSize} &middot; {item.selectedColor}
                         </p>
                         <div className="flex items-center justify-between mt-2">
@@ -90,7 +90,7 @@ export function CartDrawer() {
                             <span className="text-sm font-semibold">{formatPrice(item.product.price * item.quantity)}</span>
                             <button
                               onClick={() => removeItem(item.product.id, item.selectedSize, item.selectedColor)}
-                              className="text-navy/20 hover:text-rose-dark transition-colors"
+                              className="text-navy/45 hover:text-rose-dark transition-colors"
                             >
                               <Trash2 size={13} />
                             </button>
@@ -103,7 +103,7 @@ export function CartDrawer() {
 
                 <div className="border-t border-rose-light/20 p-5 space-y-3">
                   <div className="flex justify-between text-sm">
-                    <span className="text-navy/40">{t('subtotal')}</span>
+                    <span className="text-navy/65">{t('subtotal')}</span>
                     <span className="font-semibold">{formatPrice(subtotal)}</span>
                   </div>
                   <Link
@@ -115,7 +115,7 @@ export function CartDrawer() {
                   </Link>
                   <button
                     onClick={closeCart}
-                    className="block w-full text-center text-xs text-navy/35 hover:text-navy/60 transition-colors"
+                    className="block w-full text-center text-xs text-navy/60 hover:text-navy/60 transition-colors"
                   >
                     {t('continueShopping')}
                   </button>

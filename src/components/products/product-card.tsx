@@ -42,7 +42,7 @@ export function ProductCard({ product }: { product: Product }) {
       <div className="flex items-center gap-2 mt-0.5">
         <span className="font-semibold text-sm">{formatPrice(product.price)}</span>
         {product.originalPrice && (
-          <span className="text-navy/25 text-xs line-through">{formatPrice(product.originalPrice)}</span>
+          <span className="text-navy/50 text-xs line-through">{formatPrice(product.originalPrice)}</span>
         )}
       </div>
 

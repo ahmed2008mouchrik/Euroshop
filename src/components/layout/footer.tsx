@@ -26,24 +26,24 @@ export function Footer() {
                 Euro<span className="text-rose">shop</span>
                 <Heart size={8} className="inline-block ml-0.5 -mt-3 text-rose fill-rose" />
               </h3>
-              <p className="text-navy/40 text-sm leading-relaxed">{t('description')}</p>
+              <p className="text-navy/60 text-sm leading-relaxed">{t('description')}</p>
             </div>
 
             {/* Quick Links */}
             <div>
               <h4 className="font-medium text-rose text-xs uppercase tracking-widest mb-5">{t('quickLinks')}</h4>
               <ul className="space-y-3 text-sm">
-                <li><Link href="/" className="text-navy/40 hover:text-rose transition-colors">{tNav('home')}</Link></li>
-                <li><Link href="/products" className="text-navy/40 hover:text-rose transition-colors">{tNav('products')}</Link></li>
-                <li><Link href="/about" className="text-navy/40 hover:text-rose transition-colors">{tNav('about')}</Link></li>
-                <li><Link href="/contact" className="text-navy/40 hover:text-rose transition-colors">{tNav('contact')}</Link></li>
+                <li><Link href="/" className="text-navy/60 hover:text-rose transition-colors">{tNav('home')}</Link></li>
+                <li><Link href="/products" className="text-navy/60 hover:text-rose transition-colors">{tNav('products')}</Link></li>
+                <li><Link href="/about" className="text-navy/60 hover:text-rose transition-colors">{tNav('about')}</Link></li>
+                <li><Link href="/contact" className="text-navy/60 hover:text-rose transition-colors">{tNav('contact')}</Link></li>
               </ul>
             </div>
 
             {/* Customer Service */}
             <div>
               <h4 className="font-medium text-rose text-xs uppercase tracking-widest mb-5">{t('customerService')}</h4>
-              <ul className="space-y-3 text-sm text-navy/40">
+              <ul className="space-y-3 text-sm text-navy/60">
                 <li>{t('shippingInfo')}</li>
                 <li>{t('returns')}</li>
                 <li>{t('faq')}</li>
@@ -52,7 +52,7 @@ export function Footer() {
             </div>
           </div>
 
-          <div className="border-t border-rose-light/30 mt-12 pt-6 text-center text-xs text-navy/25">
+          <div className="border-t border-rose-light/30 mt-12 pt-6 text-center text-xs text-navy/50">
             &copy; {new Date().getFullYear()} Euroshop. {t('rights')}
           </div>
         </div>

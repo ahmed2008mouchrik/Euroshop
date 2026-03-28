@@ -40,7 +40,7 @@ export default function ProductsPage() {
       <div className="text-center mb-12">
         <span className="font-script text-rose-gold text-base">Collection</span>
         <h1 className="font-[var(--font-heading)] text-3xl md:text-4xl font-bold italic">{t('products.title')}</h1>
-        <p className="text-navy/35 mt-2 font-light">{t('products.subtitle')}</p>
+        <p className="text-navy/60 mt-2 font-light">{t('products.subtitle')}</p>
       </div>
 
       {/* Filters */}
@@ -49,7 +49,7 @@ export default function ProductsPage() {
           <button
             onClick={() => setActiveCategory('all')}
             className={`px-5 py-2.5 rounded-full text-xs font-medium uppercase tracking-wider transition-all ${
-              activeCategory === 'all' ? 'bg-gradient-to-r from-rose to-mauve text-white shadow-md shadow-rose/15' : 'bg-white text-navy/40 hover:text-navy/60 shadow-sm'
+              activeCategory === 'all' ? 'bg-gradient-to-r from-rose to-mauve text-white shadow-md shadow-rose/15' : 'bg-white text-navy/65 hover:text-navy/60 shadow-sm'
             }`}
           >
             {t('common.all')}
@@ -59,7 +59,7 @@ export default function ProductsPage() {
               key={cat.id}
               onClick={() => setActiveCategory(cat.slug)}
               className={`px-5 py-2.5 rounded-full text-xs font-medium uppercase tracking-wider transition-all ${
-                activeCategory === cat.slug ? 'bg-gradient-to-r from-rose to-mauve text-white shadow-md shadow-rose/15' : 'bg-white text-navy/40 hover:text-navy/60 shadow-sm'
+                activeCategory === cat.slug ? 'bg-gradient-to-r from-rose to-mauve text-white shadow-md shadow-rose/15' : 'bg-white text-navy/65 hover:text-navy/60 shadow-sm'
               }`}
             >
               {cat.name[locale]}
@@ -80,7 +80,7 @@ export default function ProductsPage() {
 
       {filtered.length === 0 ? (
         <div className="text-center py-24">
-          <p className="text-navy/35 font-light">{t('products.noResults')}</p>
+          <p className="text-navy/60 font-light">{t('products.noResults')}</p>
           <button
             onClick={() => setActiveCategory('all')}
             className="text-rose font-medium mt-3 text-sm hover:underline underline-offset-4"

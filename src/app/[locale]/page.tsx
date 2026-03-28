@@ -29,7 +29,7 @@ export default function HomePage() {
           <h1 className="font-[var(--font-heading)] text-4xl md:text-6xl lg:text-7xl font-bold text-navy mb-6 text-balance leading-[1.1] italic">
             {t('hero.title')}
           </h1>
-          <p className="text-navy/40 text-lg md:text-xl max-w-xl mx-auto mb-12 leading-relaxed font-light">
+          <p className="text-navy/70 text-lg md:text-xl max-w-xl mx-auto mb-12 leading-relaxed font-light">
             {t('hero.subtitle')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -41,7 +41,7 @@ export default function HomePage() {
             </Link>
             <Link
               href="/about"
-              className="border border-rose/30 text-navy/50 px-10 py-4 rounded-full font-medium hover:bg-rose-light/20 transition-colors text-[15px]"
+              className="border border-rose/30 text-navy/70 px-10 py-4 rounded-full font-medium hover:bg-rose-light/20 transition-colors text-[15px]"
             >
               {t('hero.secondaryCta')}
             </Link>
@@ -54,7 +54,7 @@ export default function HomePage() {
         <div className="text-center mb-14">
           <span className="font-script text-rose text-lg">Browse</span>
           <h2 className="font-[var(--font-heading)] text-3xl md:text-4xl font-bold italic">{t('categories.title')}</h2>
-          <p className="text-navy/35 mt-2 font-light">{t('categories.subtitle')}</p>
+          <p className="text-navy/60 mt-2 font-light">{t('categories.subtitle')}</p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 lg:gap-8">
           {categories.map((cat) => (
@@ -83,7 +83,7 @@ export default function HomePage() {
             <div>
               <p className="font-script text-rose text-lg mb-1"><Heart size={10} className="fill-rose inline-block mr-1" />Favorites</p>
               <h2 className="font-[var(--font-heading)] text-3xl md:text-4xl font-bold italic">{t('bestSellers.title')}</h2>
-              <p className="text-navy/35 mt-1 font-light">{t('bestSellers.subtitle')}</p>
+              <p className="text-navy/60 mt-1 font-light">{t('bestSellers.subtitle')}</p>
             </div>
             <Link href="/products" className="text-rose text-sm font-medium hover:underline hidden sm:block underline-offset-4">
               {t('common.seeAll')} &rarr;
@@ -112,7 +112,7 @@ export default function HomePage() {
                 <item.icon size={22} className="text-rose/60" strokeWidth={1.5} />
               </div>
               <h3 className="font-semibold text-sm mb-1">{item.title}</h3>
-              <p className="text-xs text-navy/35 leading-relaxed">{item.desc}</p>
+              <p className="text-xs text-navy/60 leading-relaxed">{item.desc}</p>
             </div>
           ))}
         </div>

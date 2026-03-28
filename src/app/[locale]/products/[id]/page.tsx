@@ -41,7 +41,7 @@ export default function ProductDetailPage() {
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-8 lg:py-16">
-      <Link href="/products" className="inline-flex items-center gap-1.5 text-xs text-navy/35 hover:text-rose mb-8 transition-colors uppercase tracking-widest font-medium">
+      <Link href="/products" className="inline-flex items-center gap-1.5 text-xs text-navy/60 hover:text-rose mb-8 transition-colors uppercase tracking-widest font-medium">
         <ArrowLeft size={14} /> {t('nav.products')}
       </Link>
 
@@ -65,7 +65,7 @@ export default function ProductDetailPage() {
             <span className="text-2xl font-bold">{formatPrice(product.price)}</span>
             {product.originalPrice && (
               <>
-                <span className="text-navy/25 line-through text-sm">{formatPrice(product.originalPrice)}</span>
+                <span className="text-navy/50 line-through text-sm">{formatPrice(product.originalPrice)}</span>
                 <span className="bg-rose text-white text-[10px] font-bold px-2.5 py-1 rounded-full">
                   -{getDiscountPercentage(product.originalPrice, product.price)}%
                 </span>
@@ -73,7 +73,7 @@ export default function ProductDetailPage() {
             )}
           </div>
 
-          <p className="text-navy/45 mt-6 leading-relaxed font-light">{product.description[locale]}</p>
+          <p className="text-navy/70 mt-6 leading-relaxed font-light">{product.description[locale]}</p>
 
           {/* Stock */}
           <div className="mt-6">
@@ -88,7 +88,7 @@ export default function ProductDetailPage() {
 
           {/* Size */}
           <div className="mt-7">
-            <p className="text-[11px] font-semibold uppercase tracking-widest text-navy/40 mb-3">{t('common.size')}</p>
+            <p className="text-[11px] font-semibold uppercase tracking-widest text-navy/65 mb-3">{t('common.size')}</p>
             <div className="flex flex-wrap gap-2">
               {product.sizes.map((size) => (
                 <button
@@ -108,7 +108,7 @@ export default function ProductDetailPage() {
 
           {/* Color */}
           <div className="mt-7">
-            <p className="text-[11px] font-semibold uppercase tracking-widest text-navy/40 mb-3">{t('common.color')}</p>
+            <p className="text-[11px] font-semibold uppercase tracking-widest text-navy/65 mb-3">{t('common.color')}</p>
             <div className="flex flex-wrap gap-3">
               {product.colors.map((color) => (
                 <button
@@ -122,7 +122,7 @@ export default function ProductDetailPage() {
                 />
               ))}
             </div>
-            {selectedColor && <p className="text-[11px] text-navy/30 mt-2 font-light">{selectedColor}</p>}
+            {selectedColor && <p className="text-[11px] text-navy/55 mt-2 font-light">{selectedColor}</p>}
           </div>
 
           {/* Add to cart */}
@@ -138,7 +138,7 @@ export default function ProductDetailPage() {
             {added ? <><Check size={18} /> {t('products.addedToCart')}</> : <><ShoppingBag size={18} strokeWidth={1.5} /> {t('common.addToCart')}</>}
           </button>
           {(!selectedSize || !selectedColor) && product.inStock && (
-            <p className="text-[11px] text-navy/25 mt-2 text-center font-light">
+            <p className="text-[11px] text-navy/50 mt-2 text-center font-light">
               {!selectedSize && t('products.selectSize')} {!selectedSize && !selectedColor && '·'} {!selectedColor && t('products.selectColor')}
             </p>
           )}

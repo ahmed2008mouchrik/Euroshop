@@ -54,7 +54,7 @@ export function Header() {
 
           {/* Actions */}
           <div className="flex items-center gap-2">
-            <button onClick={switchLocale} className="p-2 text-navy/40 hover:text-rose transition-colors text-xs font-semibold uppercase tracking-wider">
+            <button onClick={switchLocale} className="p-2 text-navy/65 hover:text-rose transition-colors text-xs font-semibold uppercase tracking-wider">
               {locale === 'en' ? 'FR' : 'EN'}
             </button>
 
