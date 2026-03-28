@@ -44,7 +44,6 @@ export function Footer() {
             <div>
               <h4 className="font-medium text-rose text-xs uppercase tracking-widest mb-5">{t('customerService')}</h4>
               <ul className="space-y-3 text-sm text-navy/60">
-                <li>{t('shippingInfo')}</li>
                 <li>{t('returns')}</li>
                 <li>{t('faq')}</li>
                 <li>{t('privacy')}</li>
