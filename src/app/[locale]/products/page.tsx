@@ -1,9 +1,9 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import { useSearchParams } from 'next/navigation';
-import { products } from '@/data/products';
+import { Product } from '@/types';
 import { categories } from '@/data/categories';
 import { ProductCard } from '@/components/products/product-card';
 
@@ -13,8 +13,17 @@ export default function ProductsPage() {
   const searchParams = useSearchParams();
   const initialCategory = searchParams.get('category') || 'all';
 
+  const [products, setProducts] = useState<Product[]>([]);
+  const [loading, setLoading] = useState(true);
   const [activeCategory, setActiveCategory] = useState(initialCategory);
   const [sortBy, setSortBy] = useState('popular');
+
+  useEffect(() => {
+    fetch('/api/products')
+      .then((res) => res.json())
+      .then((data) => setProducts(data))
+      .finally(() => setLoading(false));
+  }, []);
 
   const filtered = useMemo(() => {
     let result = activeCategory === 'all'
@@ -33,7 +42,7 @@ export default function ProductsPage() {
         break;
     }
     return result;
-  }, [activeCategory, sortBy]);
+  }, [products, activeCategory, sortBy]);
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-12 lg:py-20">
@@ -78,7 +87,17 @@ export default function ProductsPage() {
         </select>
       </div>
 
-      {filtered.length === 0 ? (
+      {loading ? (
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-6">
+          {Array.from({ length: 8 }).map((_, i) => (
+            <div key={i} className="animate-pulse">
+              <div className="aspect-[3/4] bg-soft-lilac/30 rounded-3xl mb-3" />
+              <div className="h-3 bg-soft-lilac/30 rounded-full w-3/4 mb-2" />
+              <div className="h-3 bg-soft-lilac/30 rounded-full w-1/2" />
+            </div>
+          ))}
+        </div>
+      ) : filtered.length === 0 ? (
         <div className="text-center py-24">
           <p className="text-navy/60 font-light">{t('products.noResults')}</p>
           <button

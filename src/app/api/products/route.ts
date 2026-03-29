@@ -1,28 +1,37 @@
 import { NextRequest, NextResponse } from 'next/server';
-import fs from 'fs';
-import path from 'path';
-import { Product } from '@/types';
+import { getProductsCollection } from '@/lib/mongodb';
 
-const PRODUCTS_FILE = path.join(process.cwd(), 'data', 'products.json');
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'euroshop2024';
-
-function readProducts(): Product[] {
-  const data = fs.readFileSync(PRODUCTS_FILE, 'utf-8');
-  return JSON.parse(data);
-}
-
-function writeProducts(products: Product[]) {
-  fs.writeFileSync(PRODUCTS_FILE, JSON.stringify(products, null, 2), 'utf-8');
-}
 
 function checkAuth(req: NextRequest): boolean {
   const auth = req.headers.get('authorization');
   return auth === `Bearer ${ADMIN_PASSWORD}`;
 }
 
-// GET — list all products
-export async function GET() {
-  const products = readProducts();
+// GET — list products with optional filters
+export async function GET(req: NextRequest) {
+  const collection = await getProductsCollection();
+  const { searchParams } = req.nextUrl;
+
+  const id = searchParams.get('id');
+  if (id) {
+    const product = await collection.findOne({ id }, { projection: { _id: 0 } });
+    if (!product) return NextResponse.json({ error: 'Not found' }, { status: 404 });
+    return NextResponse.json(product);
+  }
+
+  const filter: Record<string, unknown> = {};
+  const featured = searchParams.get('featured');
+  const category = searchParams.get('category');
+
+  if (featured === 'true') {
+    filter.$or = [{ featured: true }, { bestSeller: true }];
+  }
+  if (category) {
+    filter.category = category;
+  }
+
+  const products = await collection.find(filter, { projection: { _id: 0 } }).toArray();
   return NextResponse.json(products);
 }
 
@@ -32,21 +41,20 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 
-  const product: Product = await req.json();
+  const product = await req.json();
 
   if (!product.id || !product.name?.en || !product.price) {
     return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
   }
 
-  const products = readProducts();
+  const collection = await getProductsCollection();
 
-  if (products.find((p) => p.id === product.id)) {
+  const existing = await collection.findOne({ id: product.id });
+  if (existing) {
     return NextResponse.json({ error: 'Product ID already exists' }, { status: 409 });
   }
 
-  products.push(product);
-  writeProducts(products);
-
+  await collection.insertOne(product);
   return NextResponse.json(product, { status: 201 });
 }
 
@@ -56,16 +64,13 @@ export async function PUT(req: NextRequest) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 
-  const updated: Product = await req.json();
-  const products = readProducts();
-  const index = products.findIndex((p) => p.id === updated.id);
+  const updated = await req.json();
+  const collection = await getProductsCollection();
+  const result = await collection.replaceOne({ id: updated.id }, updated);
 
-  if (index === -1) {
+  if (result.matchedCount === 0) {
     return NextResponse.json({ error: 'Product not found' }, { status: 404 });
   }
-
-  products[index] = updated;
-  writeProducts(products);
 
   return NextResponse.json(updated);
 }
@@ -77,14 +82,12 @@ export async function DELETE(req: NextRequest) {
   }
 
   const { id } = await req.json();
-  const products = readProducts();
-  const filtered = products.filter((p) => p.id !== id);
+  const collection = await getProductsCollection();
+  const result = await collection.deleteOne({ id });
 
-  if (filtered.length === products.length) {
+  if (result.deletedCount === 0) {
     return NextResponse.json({ error: 'Product not found' }, { status: 404 });
   }
-
-  writeProducts(filtered);
 
   return NextResponse.json({ success: true });
 }

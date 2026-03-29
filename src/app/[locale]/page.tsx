@@ -1,8 +1,9 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import { Link } from '@/i18n/navigation';
-import { products } from '@/data/products';
+import { Product } from '@/types';
 import { categories } from '@/data/categories';
 import { ProductCard } from '@/components/products/product-card';
 import { Sparkles, HeadphonesIcon, ShoppingBag, Heart } from 'lucide-react';
@@ -11,7 +12,15 @@ export default function HomePage() {
   const t = useTranslations();
   const locale = useLocale() as 'en' | 'fr';
 
-  const featuredProducts = products.filter((p) => p.featured || p.bestSeller).slice(0, 8);
+  const [featuredProducts, setFeaturedProducts] = useState<Product[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch('/api/products?featured=true')
+      .then((res) => res.json())
+      .then((data) => setFeaturedProducts(data.slice(0, 8)))
+      .finally(() => setLoading(false));
+  }, []);
 
   return (
     <>
@@ -89,11 +98,23 @@ export default function HomePage() {
               {t('common.seeAll')} &rarr;
             </Link>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-6">
-            {featuredProducts.map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
-          </div>
+          {loading ? (
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-6">
+              {Array.from({ length: 4 }).map((_, i) => (
+                <div key={i} className="animate-pulse">
+                  <div className="aspect-[3/4] bg-soft-lilac/30 rounded-3xl mb-3" />
+                  <div className="h-3 bg-soft-lilac/30 rounded-full w-3/4 mb-2" />
+                  <div className="h-3 bg-soft-lilac/30 rounded-full w-1/2" />
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-6">
+              {featuredProducts.map((product) => (
+                <ProductCard key={product.id} product={product} />
+              ))}
+            </div>
+          )}
         </div>
       </section>
 

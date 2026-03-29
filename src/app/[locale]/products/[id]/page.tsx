@@ -1,10 +1,10 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams } from 'next/navigation';
 import { useTranslations, useLocale } from 'next-intl';
 import { Link } from '@/i18n/navigation';
-import { products } from '@/data/products';
+import { Product } from '@/types';
 import { useCart } from '@/context/cart-context';
 import { formatPrice, getDiscountPercentage } from '@/lib/utils';
 import { ProductCard } from '@/components/products/product-card';
@@ -16,10 +16,43 @@ export default function ProductDetailPage() {
   const locale = useLocale() as 'en' | 'fr';
   const { addItem } = useCart();
 
-  const product = products.find((p) => p.id === id);
+  const [product, setProduct] = useState<Product | null>(null);
+  const [related, setRelated] = useState<Product[]>([]);
+  const [loading, setLoading] = useState(true);
   const [selectedSize, setSelectedSize] = useState('');
   const [selectedColor, setSelectedColor] = useState('');
   const [added, setAdded] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+    fetch(`/api/products?id=${id}`)
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data) => {
+        setProduct(data);
+        if (data?.category) {
+          fetch(`/api/products?category=${data.category}`)
+            .then((res) => res.json())
+            .then((all) => setRelated(all.filter((p: Product) => p.id !== id).slice(0, 4)));
+        }
+      })
+      .finally(() => setLoading(false));
+  }, [id]);
+
+  if (loading) {
+    return (
+      <div className="max-w-7xl mx-auto px-4 py-8 lg:py-16">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-20 animate-pulse">
+          <div className="aspect-[3/4] bg-soft-lilac/30 rounded-[2rem]" />
+          <div className="flex flex-col py-4 gap-4">
+            <div className="h-8 bg-soft-lilac/30 rounded-full w-3/4" />
+            <div className="h-6 bg-soft-lilac/30 rounded-full w-1/3" />
+            <div className="h-20 bg-soft-lilac/30 rounded-2xl w-full mt-4" />
+            <div className="h-10 bg-soft-lilac/30 rounded-full w-full mt-6" />
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   if (!product) {
     return (
@@ -29,8 +62,6 @@ export default function ProductDetailPage() {
       </div>
     );
   }
-
-  const related = products.filter((p) => p.category === product.category && p.id !== product.id).slice(0, 4);
 
   const handleAdd = () => {
     if (!selectedSize || !selectedColor) return;
