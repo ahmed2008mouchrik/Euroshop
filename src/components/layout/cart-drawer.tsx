@@ -6,6 +6,7 @@ import { useCart } from '@/context/cart-context';
 import { X, Plus, Minus, Trash2, ShoppingBag, Sparkles } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { formatPrice } from '@/lib/utils';
+import Image from 'next/image';
 
 export function CartDrawer() {
   const t = useTranslations('cart');
@@ -62,8 +63,17 @@ export function CartDrawer() {
                 <div className="flex-1 overflow-y-auto p-4 space-y-3">
                   {items.map((item) => (
                     <div key={`${item.product.id}-${item.selectedSize}-${item.selectedColor}`} className="flex gap-3 bg-warm-blush/60 rounded-2xl p-3">
-                      <div className="w-16 h-16 bg-lavender/50 rounded-xl flex items-center justify-center text-mauve/30 text-xs flex-shrink-0">
-                        IMG
+                      <div className="w-16 h-16 bg-lavender/50 rounded-xl overflow-hidden flex-shrink-0 relative">
+                        {item.product.images?.[0] ? (
+                          <Image
+                            src={item.product.images[0]}
+                            alt={item.product.name[locale]}
+                            fill
+                            className="object-cover"
+                          />
+                        ) : (
+                          <div className="w-full h-full flex items-center justify-center text-mauve/30 text-xs">IMG</div>
+                        )}
                       </div>
                       <div className="flex-1 min-w-0">
                         <p className="font-medium text-sm truncate">{item.product.name[locale]}</p>

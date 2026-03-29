@@ -9,6 +9,7 @@ import { sendOrderEmail } from '@/lib/email';
 import { buildWhatsAppLink } from '@/lib/whatsapp';
 import { OrderFormData } from '@/types';
 import { ArrowLeft, Minus, Plus, MessageCircle, Heart, Sparkles } from 'lucide-react';
+import Image from 'next/image';
 
 export default function OrderPage() {
   const t = useTranslations();
@@ -126,7 +127,16 @@ export default function OrderPage() {
               <div className="space-y-3 max-h-56 overflow-y-auto">
                 {items.map((item) => (
                   <div key={`${item.product.id}-${item.selectedSize}-${item.selectedColor}`} className="flex gap-3">
-                    <div className="w-12 h-12 bg-lavender/30 rounded-xl flex-shrink-0" />
+                    <div className="w-12 h-12 bg-lavender/30 rounded-xl flex-shrink-0 overflow-hidden relative">
+                      {item.product.images?.[0] ? (
+                        <Image
+                          src={item.product.images[0]}
+                          alt={item.product.name[locale]}
+                          fill
+                          className="object-cover"
+                        />
+                      ) : null}
+                    </div>
                     <div className="flex-1 min-w-0">
                       <p className="text-xs font-medium truncate">{item.product.name[locale]}</p>
                       <p className="text-[10px] text-navy/55">{item.selectedSize} &middot; {item.selectedColor}</p>
