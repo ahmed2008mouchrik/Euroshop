@@ -7,6 +7,7 @@ import { Product } from '@/types';
 import { categories } from '@/data/categories';
 import { ProductCard } from '@/components/products/product-card';
 import { Sparkles, HeadphonesIcon, ShoppingBag, Heart } from 'lucide-react';
+import Image from 'next/image';
 
 export default function HomePage() {
   const t = useTranslations();
@@ -72,11 +73,17 @@ export default function HomePage() {
               href={`/products?category=${cat.slug}`}
               className="group relative aspect-[4/5] rounded-[2rem] overflow-hidden"
             >
-              <div className="absolute inset-0 bg-gradient-to-b from-petal/80 to-rose-gold/85 group-hover:from-petal/60 group-hover:to-rose-gold/65 transition-all duration-500" />
-              <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-shadow-soft">
-                <h3 className="font-[var(--font-heading)] text-2xl md:text-3xl font-bold italic">{cat.name[locale]}</h3>
-                <p className="text-white/60 text-sm mt-2 font-light">{cat.description[locale]}</p>
-                <span className="mt-5 text-xs uppercase tracking-widest text-white/80 font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+              <Image
+                src={cat.image}
+                alt={cat.name[locale]}
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy/50 via-navy/10 to-transparent" />
+              <div className="absolute inset-x-0 bottom-0 p-6 flex flex-col items-center text-center">
+                <h3 className="font-[var(--font-heading)] text-2xl md:text-3xl font-bold italic text-white drop-shadow-md">{cat.name[locale]}</h3>
+                <p className="text-white/70 text-sm mt-1 font-light">{cat.description[locale]}</p>
+                <span className="mt-3 text-xs uppercase tracking-widest text-white/80 font-medium opacity-0 group-hover:opacity-100 transition-opacity">
                   Explorer &rarr;
                 </span>
               </div>
