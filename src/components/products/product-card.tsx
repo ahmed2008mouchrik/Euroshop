@@ -13,9 +13,17 @@ export function ProductCard({ product }: { product: Product }) {
   return (
     <Link href={`/products/${product.id}`} className="group block">
       <div className="relative aspect-[3/4] bg-gradient-to-b from-soft-lilac/50 to-soft-pink/40 rounded-3xl overflow-hidden mb-3">
-        <div className="w-full h-full flex items-center justify-center text-navy/10 text-sm group-hover:scale-105 transition-transform duration-700 ease-out">
-          <span className="font-[var(--font-heading)] text-base px-4 text-center italic">{product.name[locale]}</span>
-        </div>
+        {product.images?.[0] ? (
+          <img
+            src={product.images[0]}
+            alt={product.name[locale]}
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+          />
+        ) : (
+          <div className="w-full h-full flex items-center justify-center text-navy/10 text-sm group-hover:scale-105 transition-transform duration-700 ease-out">
+            <span className="font-[var(--font-heading)] text-base px-4 text-center italic">{product.name[locale]}</span>
+          </div>
+        )}
 
         {/* Badges */}
         <div className="absolute top-3 left-3 flex flex-col gap-1.5">
