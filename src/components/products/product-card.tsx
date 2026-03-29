@@ -5,6 +5,7 @@ import { Link } from '@/i18n/navigation';
 import { Product } from '@/types';
 import { formatPrice, getDiscountPercentage } from '@/lib/utils';
 import { Heart } from 'lucide-react';
+import Image from 'next/image';
 
 export function ProductCard({ product }: { product: Product }) {
   const locale = useLocale() as 'en' | 'fr';
@@ -14,10 +15,11 @@ export function ProductCard({ product }: { product: Product }) {
     <Link href={`/products/${product.id}`} className="group block">
       <div className="relative aspect-[3/4] bg-gradient-to-b from-soft-lilac/50 to-soft-pink/40 rounded-3xl overflow-hidden mb-3">
         {product.images?.[0] ? (
-          <img
+          <Image
             src={product.images[0]}
             alt={product.name[locale]}
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+            fill
+            className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
           />
         ) : (
           <div className="w-full h-full flex items-center justify-center text-navy/10 text-sm group-hover:scale-105 transition-transform duration-700 ease-out">

@@ -9,6 +9,7 @@ import { useCart } from '@/context/cart-context';
 import { formatPrice, getDiscountPercentage } from '@/lib/utils';
 import { ProductCard } from '@/components/products/product-card';
 import { ShoppingBag, Check, ArrowLeft, Heart, Sparkles } from 'lucide-react';
+import Image from 'next/image';
 
 export default function ProductDetailPage() {
   const { id } = useParams<{ id: string }>();
@@ -78,12 +79,13 @@ export default function ProductDetailPage() {
 
       <div className="grid lg:grid-cols-2 gap-10 lg:gap-20">
         {/* Image */}
-        <div className="aspect-[3/4] bg-gradient-to-b from-soft-lilac/50 to-soft-pink/40 rounded-[2rem] overflow-hidden">
+        <div className="relative aspect-[3/4] bg-gradient-to-b from-soft-lilac/50 to-soft-pink/40 rounded-[2rem] overflow-hidden">
           {product.images?.[0] ? (
-            <img
+            <Image
               src={product.images[0]}
               alt={product.name[locale]}
-              className="w-full h-full object-cover"
+              fill
+              className="object-cover"
             />
           ) : (
             <div className="w-full h-full flex items-center justify-center">

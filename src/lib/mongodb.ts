@@ -7,6 +7,8 @@ declare global {
   var _mongoClientPromise: Promise<MongoClient> | undefined;
 }
 
+let clientPromise: Promise<MongoClient> | null = null;
+
 function getClientPromise(): Promise<MongoClient> {
   const uri = process.env.MONGODB_URI;
   if (!uri) {
@@ -20,7 +22,10 @@ function getClientPromise(): Promise<MongoClient> {
     return globalThis._mongoClientPromise;
   }
 
-  return new MongoClient(uri, options).connect();
+  if (!clientPromise) {
+    clientPromise = new MongoClient(uri, options).connect();
+  }
+  return clientPromise;
 }
 
 export async function getProductsCollection(): Promise<Collection<Product>> {

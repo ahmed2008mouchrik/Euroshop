@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { Product } from '@/types';
 import { formatPrice } from '@/lib/utils';
-import { Plus, Pencil, Trash2, LogOut, Save, X, Eye, EyeOff } from 'lucide-react';
+import { Plus, Pencil, Trash2, LogOut, Save, X, Eye, EyeOff, ImagePlus } from 'lucide-react';
 
 const CATEGORIES = [
   { value: 'vetements', label: 'Vêtements' },
@@ -271,6 +271,17 @@ function ProductForm({
   const [colorsText, setColorsText] = useState(
     product.colors.map((c) => `${c.name}:${c.hex}`).join(', ')
   );
+  const [imageUrls, setImageUrls] = useState<string[]>(
+    product.images.length > 0 ? [...product.images] : ['']
+  );
+
+  const addImageField = () => setImageUrls((prev) => [...prev, '']);
+  const removeImageField = (index: number) => {
+    setImageUrls((prev) => prev.filter((_, i) => i !== index));
+  };
+  const updateImageUrl = (index: number, value: string) => {
+    setImageUrls((prev) => prev.map((url, i) => (i === index ? value : url)));
+  };
 
   const update = (field: string, value: any) => {
     setForm((prev) => ({ ...prev, [field]: value }));
@@ -286,11 +297,13 @@ function ProductForm({
       return { name: name?.trim() || '', hex: hex?.trim() || '#000000' };
     }).filter((c) => c.name);
 
+    const images = imageUrls.map((u) => u.trim()).filter(Boolean);
+
     const id = isNew
       ? form.name.en.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
       : form.id;
 
-    onSave({ ...form, id, sizes, tags, colors });
+    onSave({ ...form, id, sizes, tags, colors, images });
   };
 
   return (
@@ -345,6 +358,39 @@ function ProductForm({
             onChange={(e) => update('description', { ...form.description, fr: e.target.value })}
             className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#E8B4B8]/50 resize-none"
           />
+        </div>
+
+        {/* Images */}
+        <div>
+          <label className="block text-xs font-medium text-gray-500 mb-1">Images (URLs)</label>
+          <div className="space-y-2">
+            {imageUrls.map((url, index) => (
+              <div key={index} className="flex items-center gap-2">
+                <input
+                  value={url}
+                  onChange={(e) => updateImageUrl(index, e.target.value)}
+                  placeholder="/images/example.jpg"
+                  className="flex-1 border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#E8B4B8]/50"
+                />
+                {imageUrls.length > 1 && (
+                  <button
+                    type="button"
+                    onClick={() => removeImageField(index)}
+                    className="p-1.5 text-gray-400 hover:text-red-500 rounded-lg hover:bg-red-50 transition-colors"
+                  >
+                    <X size={16} />
+                  </button>
+                )}
+              </div>
+            ))}
+          </div>
+          <button
+            type="button"
+            onClick={addImageField}
+            className="mt-2 flex items-center gap-1.5 text-xs text-[#E8B4B8] hover:text-[#d4989c] font-medium transition-colors"
+          >
+            <ImagePlus size={14} /> Ajouter une image
+          </button>
         </div>
 
         {/* Category, Price, Original Price */}
