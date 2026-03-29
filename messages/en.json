@@ -157,11 +157,11 @@
     "success": "Message sent successfully! We'll get back to you soon.",
     "error": "Failed to send message. Please try again.",
     "infoTitle": "Contact Information",
-    "address": "123 Fashion Street, Brussels, Belgium",
-    "phone": "+32 123 456 789",
-    "emailAddress": "contact@euroshop.com",
+    "address": "Bruxelles, Belgique",
+    "phone": "+212 612-536960",
+    "emailAddress": "eurosshop.2025@gmail.com",
     "hours": "Mon-Sat: 9:00 - 18:00",
-    "hoursLabel": "Business Hours",
+    "hoursLabel": "Availability Hours",
     "whatsapp": "Chat on WhatsApp"
   },
   "footer": {

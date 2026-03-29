@@ -157,11 +157,11 @@
     "success": "Message envoy\u00e9 avec succ\u00e8s ! Nous vous r\u00e9pondrons dans les plus brefs d\u00e9lais.",
     "error": "\u00c9chec de l\u2019envoi du message. Veuillez r\u00e9essayer.",
     "infoTitle": "Informations de Contact",
-    "address": "123 Rue de la Mode, Bruxelles, Belgique",
-    "phone": "+32 123 456 789",
-    "emailAddress": "contact@euroshop.com",
+    "address": "Bruxelles, Belgique",
+    "phone": "+212 612-536960",
+    "emailAddress": "eurosshop.2025@gmail.com",
     "hours": "Lun-Sam : 9h00 - 18h00",
-    "hoursLabel": "Heures d\u2019Ouverture",
+    "hoursLabel": "Heures de Disponibilité",
     "whatsapp": "Discuter sur WhatsApp"
   },
   "footer": {
